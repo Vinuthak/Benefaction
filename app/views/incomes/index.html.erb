@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h3>List Of Incomes</h3>
+	<style>
+	body {background-color: rgba(0,255,0,0.3);}
+	</style>
+</head>
+<body>
+	<table bgcolor="white" border="2" cellspacing="0" cellpadding="3">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Amount</th>
+				<th>Description</th>
+				<th>Account_id</th>
+				<th>Edit</th>
+				<th>Destroy</th>
+			</tr>
+		</thead>
+		<tbody>
+				<% for income in @incomes %>
+			<tr>
+				<td><%= income.name %></td>
+				<td><%= income.amount %></td>
+				<td><%= income.purpose %></td>
+				<td><%= income.account_id %></td>
+				<td><%= link_to 'Edit',edit_account_income_path(@account,income) %></td>
+				<td><%= link_to 'Delete',account_income_path(@account,income),
+						method: :delete,data: {confirm: 'Are you sure?'} %></td>
+			</tr>
+				<% end %>		
+
+		</tbody>
+
+	</table><br>
+</body>
+</html>
+				<strong><td>Total Income <%= @total%></td></strong><br>
+<%= link_to 'Enter new income', new_account_income_path(@account,income) %>

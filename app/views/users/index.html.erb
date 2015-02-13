@@ -1,0 +1,36 @@
+<html>
+	<style>
+	body {font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			    width: 100%;}
+	</style>
+		<h2><strong>Users of <%= @account.name %></strong></h2>
+	<table border="2" cellspacing="0" cellpadding="2">
+		<thead>
+			<tr>
+
+			 	<td>First Name</td>
+			 	<td>Last Name</td>
+			 	<td>Gender</td>
+			 	<td>Place</td>
+			 	<td>Edit</td>
+			 	<td>Delete</td>
+		 	</tr>
+	 	</thead>
+
+	 	<tbody>
+				<% for user in @users %>
+		 	<tr>
+				<td><%= user.firstname %></td>
+				<td><%= user.lastname %></td>
+				<td><%= user.gender %></td>
+				<td><%= user.place %></td>
+				<td><%= link_to 'edit',edit_account_user_path(@account,user)%></td>	
+				<td><%= link_to 'delete',account_user_path(@account,user), 
+				      method: :delete,data: {confirm: 'Are you sure?'}%></td>
+			</tr>
+				<% end %>
+		</tbody>
+
+	</table>
+</html>
+<%= link_to 'create new user',new_account_user_path(@account,user)%>

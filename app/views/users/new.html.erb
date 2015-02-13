@@ -1,0 +1,41 @@
+<h2>Fill the form to register</h2>
+
+<%= form_for [@account,@user]  do |f| %>
+	<% if @user.errors.any? %>
+		<div id="Error-message">
+			<ol>
+			<%= @user.errors.size %> <%= (@user.errors.size > 1) ? "Errors" : "Error"%> 
+				<% for error in @user.errors.full_messages %>
+					<li><%= error %></li>
+				<% end %>
+			</ol>
+		</div>		
+	<% end %>
+
+	<div class="input-box">
+		<%= f.label :firstname %> 
+		<%= f.text_field :firstname %>
+	</div>
+
+	<div class="input-box">
+		<%= f.label :lastname %> 
+		<%= f.text_field :lastname %>
+	</div>
+
+	<div class="input-box">
+		<%= f.label :gender%>
+		<%= f.radio_button(:gender,"male")  %> male
+		<%= f.radio_button(:gender, "female") %> female 
+	</div>
+
+	<div class="input-box">
+		<%= f.label :place %>
+		<%= f.text_field :place %>
+	</div>
+
+	<div class="input-box">
+	<%= f.submit %>
+	</div>
+
+<% end %>
+

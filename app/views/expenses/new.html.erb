@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style> 
+			body { background-color: rgba(0,0,255,0.3); }
+		</style>
+	</head>
+	<body>
+
+			<h3>Form to enter expense </h3>
+		<%= form_for [@account,@expense] do |f| %>
+			<% if @expense.errors.any? %>
+				
+				<div id="Error_message">
+					<ol><%= pluralize(@expense.errors.count,"Error") %> prohibited the following expense from saving
+						<% for error in @expense.errors.full_messages %>
+							<li><%= error %></li>
+						<% end %>
+					</ol>
+				</div>
+					
+			<% end%>
+
+			
+			<div class="input-box">
+				<%= f.label :purpose %>
+				<%= f.text_area :purpose %>
+			</div>				
+			
+			<div class="input-box">
+				<%= f.label :amount %> 
+				<%= f.text_field :amount %>
+			</div>
+
+			<div class="input-box">
+				<%= f.submit %>
+			</div>
+		<% end %>
+	</body>
+		<div>
+			<%= link_to 'List of expenses',account_expenses_path(@account,@expense) %>
+		</div>
+</html>

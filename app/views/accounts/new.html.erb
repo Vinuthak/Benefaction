@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			 body { background-color: hsla(120,100%,75%,0.3);background-position: right top;
+				 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+				    width: 100%;
+			 		
+					
+				 
+				  }
+			 h2 {colour: orange;}
+				 
+		</style>
+	</head>
+	<body>
+		<h2>Register the details</h2>
+		<%= form_for @account do |f|%>
+		    <% if @account.errors.any? %>
+				<div id= "error_explination">
+					<ol>
+						<%= pluralize(@account.errors.count,"error") %> prohibited this from being saved:
+						
+							<% for error in @account.errors.full_messages %>
+								<li><%= error %></li>
+							<%	end %>
+					</ol>
+				</div>
+			<% end %>
+
+				<div class= "input-box">
+					<%= f.label :name %>
+					<%= f.text_field :name %>
+				</div>
+
+				<div class= "input-box">
+					<%= f.label :description %>
+					<%= f.text_area :description %>
+				</div>
+
+				<div class= "input-box">
+					<%= f.label :place %>
+					<%= f.text_field :place %>
+				</div>
+
+				<div class= "input-box">
+					<%= f.label :registration_number %>
+					<%= f.text_field :registration_number %>
+				</div>
+
+				<div class= "input-box">
+					<%= f.label :user_name %>
+					<%= f.text_field :user_name %>
+				</div>					
+
+				<span style = "width:100px; float:left;" >&nbsp;</span>
+					<%= f.submit %>
+			
+		<% end %><br>
+	</body>
+<%= link_to 'List of accounts',accounts_path(@account) %>
+</html>

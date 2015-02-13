@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style> 
+			body { background-color: rgba(0,0,255,0.3); }
+		</style>
+	</head>
+	<body>
+
+		<%= form_for [@account,@expense] do |f| %>
+			<h3>Form to enter expense </h3>
+			<div>
+				<%= f.label :purpose %>:
+				<%= f.text_area :purpose %>
+			</div>	
+							
+			<div>
+				<%= f.label :amount %> :
+				<%= f.text_field :amount %><br>
+			</div>
+			
+
+			<div>
+				<%= f.submit %>
+			</div>
+		<% end %>
+	</body>
+		
+</html>

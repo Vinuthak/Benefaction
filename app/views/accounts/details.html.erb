@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		 	body {background-color: hsla(120,100%,50%,0.3); font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			    width: 100%; }
+		</style>
+	</head>
+										
+			<strong><h3>List of Bingo holders of <%= @account.name %></h3></strong>
+	<body>
+		<table border="2" bgcolor="#FFFFFF" cellpadding="1" cellspacing="1">
+			<thead>
+				<tr>
+					<td>First Name</td>
+					<td>Last Name</td>
+					<td>Gender</td>
+					<td>Amount</td>
+				</tr>
+			</thead>
+
+
+			<tbody>
+				<% for bingo in @bingos %>
+					<tr>
+						<td><%= bingo.firstname %><br></td>
+						<td><%= bingo.lastname %><br></td>
+						<td><%= bingo.gender %><br></td>
+						<td><%= bingo.amount %><br></td>
+					</tr>
+				<% end %>
+				
+			</tbody>
+		</table>
+	</body>
+</html>
+
+<%= link_to 'Create new bingo',new_account_bingo_path(@account,bingo)%><br>
+<%= link_to 'Back to bingo holders list',account_bingos_path(@account,bingo) %>
+

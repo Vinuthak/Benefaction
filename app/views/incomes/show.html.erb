@@ -1,0 +1,20 @@
+<table bgcolor="white" border="2" cellspacing="0" cellpadding="3">
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Amount</td>
+				<td>Purpose</td>
+				<td>Account_id</td>
+				<td>Edit</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><%= @income.name %></td>
+				<td><%= @income.amount%></td>
+				<td><%= @income.purpose%></td>
+				<td><%= @income.account_id%></td>
+				<td><%= link_to 'edit',edit_account_income_path(@account,@income) %></td>
+
+			</tr>
+		</tbody>

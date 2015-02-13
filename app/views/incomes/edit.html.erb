@@ -1,0 +1,21 @@
+<%= form_for [@account,@income] do |f|%>
+	<div>
+	<%= f.label :name %> :
+	<%= f.text_field :name %><br>
+	</div>
+
+	<div>
+	<%= f.label :amount %> :
+	<%= f.text_field :amount %><br>
+	</div>
+
+	<div>
+	<%= f.label :purpose %> :
+	<%= f.text_area :purpose %><br>
+	</div>
+
+	<div>
+	<%= f.submit%>
+	</div>
+	
+<% end%>

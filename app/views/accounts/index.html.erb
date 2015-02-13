@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	body {background-color: hsla(120,100%,50%,0.3);}
+	</style>
+</head>
+			<h2>Accounts created</h2>
+	<table border="1" cellspacing="0" cellpadding="2">
+		<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Place</th>
+					<th>Registration Number</th>
+					<th>User Name</th>
+					<th>Update</th>
+					<th>Delete</th>
+				</tr>
+		</thead>
+<body>
+		<tbody>
+			<% for account in @accounts %>
+				<tr>
+
+					<td><%= account.name %></td>
+					<td><%= account.description %></td>
+					<td><%= account.place %></td>
+					<td><%= account.registration_number %></td>
+					<td><%= account.user_name %></td>
+					<td><%= link_to 'Edit',edit_account_path(account) %></td>
+					<td><%= link_to 'Delete',account_path(account),
+						method: :delete,data: {confirm: 'Are you sure?'} %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</body>
+<strong>Click here to </strong><%= link_to 'Create new account',new_account_path(account) %><br>
+<strong>Click here to </strong><%= link_to 'list of users',user_list_account_path(account) %>
+</html>
+
+  

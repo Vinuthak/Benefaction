@@ -1,0 +1,27 @@
+<%= form_for [@account,@user] do |f| %>
+	<div>
+	<%= f.label :firstname %> :
+	<%= f.text_field :firstname %><br>
+	</div>
+
+	<div>
+	<%= f.label :lastname %> :
+	<%= f.text_field :lastname %><br>
+	</div>
+
+	<div>
+		<%= f.label :gender%>:
+		<%= f.radio_button(:gender,"female")  %> male
+		<%= f.radio_button(:gender, "female") %> female
+	</div>
+
+	<div>
+		<%= f.label :place %>:
+		<%= f.text_field :place %>
+	</div>	
+
+	<div>
+	<%= f.submit %>
+	</div>
+
+<% end %>

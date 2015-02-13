@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body{ background-color:#D8D8D8; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			    width: 100%;}
+		</style>
+	</head>
+	<body> 
+		<strong><h2>List of Expenses</h2></strong>
+		<table bgcolor="white" border="1" cellpadding="2" cellspacing="0">
+			<thead>
+				<tr>
+					<th>Purpose</th>
+					<th>Amount</th>
+					<th>Account Id</th>
+					<th>Edit</th>
+					<th>Destroy</th>
+				</tr>
+			</thead>
+			<tbody>
+					<% for expense in @expenses %>
+				<tr>
+						<td><%= expense.purpose %></td>
+						<td><%= expense.amount %></td>
+						<td><%= expense.account_id %></td>
+						<td><%= link_to 'edit',edit_account_expense_path(@account,expense)%></td>
+						<td><%= link_to 'delete',account_expense_path(@account,expense),
+								method: :delete,data: {confirm: 'Are you sure?'} %></td>
+				</tr>
+					<% end %>
+			</tbody>
+		</table>
+	</body>
+</html>
+<%= link_to 'Create new expense',new_account_expense_path(@account,expense) %>

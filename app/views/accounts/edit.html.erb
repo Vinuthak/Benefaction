@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			 body { background-color: hsla(120,100%,75%,0.3);background-image:url("img_tharavadu2.jpg") ;background-position: right top;}
+			 h2 {colour: orange;}
+		</style>
+	</head>
+	<body>
+		<h2>Register the details</h2>
+		<%= form_for @account do |f|%>
+			<div>
+				<%= f.label :name, {:style => "width:100px; float:left "} %>
+				<%= f.text_field :name %>
+			</div>
+			
+			<div>	
+				<%= f.label "description",{:style => "width:100px; float:left"} %>
+				<%= f.text_area :description %>
+			</div>
+			
+			<div>	
+				<%= f.label :place, {:style => "width:100px; float:left"} %>
+				<%= f.text_field :place %>
+			</div>
+			
+			<div>	
+				<%= f.label :registration_number,{:style => "width:100px; float:left"} %>
+				<%= f.text_field :registration_number %><br><br>
+			</div>
+			
+			<div>
+				<%= f.label :user_name,{:style => "width:100px; float:left"} %>
+				<%= f.text_field :user_name %>
+			</div>	
+
+			<div>
+			<span style = "width:100px; float:left">&nbsp</span>
+				<%= f.submit %>
+			</div>	
+		<% end %>
+	</body>
+
+
+</html>

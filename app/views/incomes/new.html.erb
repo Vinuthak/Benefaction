@@ -1,0 +1,43 @@
+
+<html>
+	<thead>
+		<style>
+			body { background-color:  linen;}
+		</style>
+	</thead>
+
+	<%= form_for [@account,@income] do |f|%>
+		<% if @income.errors.any? %>
+			<div id="Error_message"> 
+				<ol>
+					<%= pluralize(@income.errors.count,"error") %> prohibited this income from being saved.
+
+					<% for error in @income.errors.full_messages %>
+						<li><%= error %></li>
+					<% end %>
+				</ol>
+			</div>
+		<% end %>
+			
+		<div class = "input-box">
+			<%= f.label :name %> 
+			<%= f.text_field :name %>
+		</div>
+
+		<div class = "input-box">
+			<%= f.label :amount %> 
+			<%= f.text_field :amount %>
+		</div>
+
+		<div class = "input-box">
+			<%= f.label :purpose %> 
+			<%= f.text_area :purpose %>
+		</div>
+
+		<div class = "input-box">
+			<%= f.submit%>
+		</div>
+		
+	<% end%>
+
+</html>

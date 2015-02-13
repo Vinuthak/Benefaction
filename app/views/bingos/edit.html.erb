@@ -1,0 +1,31 @@
+<%= form_for [@account,@bingo] do |f|%>
+	<div>
+		<%= f.label :firstname %> :
+		<%= f.text_field :firstname %>
+	</div>
+
+	<div>
+		<%= f.label :lastname %> :
+		<%= f.text_field :lastname%>
+	</div>
+
+	<div>
+		<%= f.label :gender %>
+		<%= f.radio_button(:gender,"male") %> :Male
+		<%= f.radio_button(:gender,"female") %> :Female
+	</div>
+
+	<div>
+		<%= f.label :amount%> :
+		<%= f.text_field :amount%>
+	</div>
+
+	<div>
+		<%= f.label :date %>
+		<%= f.date_field :date %>
+	</div>
+
+	<div>
+		<%= f.submit %>
+	</div>
+<% end %>

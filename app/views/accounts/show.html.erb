@@ -1,0 +1,75 @@
+<html>
+
+	<style>
+		body { background-color: #F0F8FF; 
+				font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			    width: 100%;
+			    border-collapse: collapse;}
+		th {background-color: #A7C942;
+    		color: #ffffff;}	    
+
+
+	</style>
+
+	<h2><strong>Details of <%= @account.name%></strong></h2>
+	<table bgcolor="#F0F8FF" border="2" cellpadding="2" cellspacing="0">
+		<thead>
+			<tr>
+				<th>Content</th>
+				<th>Details</th>
+			</tr>			
+			<tr>
+				<td>Name</td>
+				<td><%= @account.name%></td>
+			</tr>
+			
+			<tr>	
+				<td>Description</td>
+				<td><%= @account.description%></td>
+			</tr>
+
+			<tr>	
+				<td>Place</td>
+				<td><%= @account.place%></td>
+			</tr>
+			
+			<tr>	
+				<td>Registration Number</td>
+				<td><%= @account.registration_number%></td>
+			</tr>
+			
+			<tr>	
+				<td>User Name</td>
+				<td><%= @account.user_name%></td>
+			</tr>
+			
+			<tr>	
+				<td>Total Income</td>
+				<td><%= @total_income%></td>
+			</tr>	
+
+			<tr>
+				<td>Total Expense</td>
+				<td><%= @total_expense%></td>
+			</tr>
+			
+
+				
+			<tr>
+					<strong><td> Balance </td></strong>
+					<td><%=@balance%></td>
+			</tr>
+				
+		</thead>
+		
+		
+	</table><br>
+</html>
+
+
+				<strong>Click here to </strong><td><%= link_to 'edit',edit_account_path(@account)%></td><br>
+				<strong>Click here to </strong><td><%= link_to 'delete',account_path(@account),
+						method: :delete,data: {confirm: 'Are you sure?'} %></td>
+
+
+						s

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body { background-color: #FFFFCC; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+			    width: 100%;}
+
+		</style>
+	</head>
+			<strong><h3>List of Bingo holders of <%= @account.name %></h3></strong>	
+	<body>
+		<table bgcolor="#FFFFFF" border="2" cellspacing="1" cellpadding="1">
+				
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Amount</th>
+					
+			</thead>
+				
+
+			<tbody>
+					<% for bingo in @bingos%>
+				<tr>
+					<td><%= bingo.firstname %></td>
+					<td><%= bingo.amount%><br></td>
+					<td><%= link_to 'Edit',edit_account_bingo_path(@account,bingo) %></td>
+					<td><%= link_to 'Delete',account_bingo_path(@account,bingo),
+					         method: :delete,data: {confirm: 'Are you sure?'}%></td>
+				</tr>
+					<% end %>
+			</tbody>
+		</table><br>
+	</body>
+</html>
+				
+
+
+
+<%= link_to 'click here for complete details of account holders',details_account_path(@account,bingo) %><br>
+<%= link_to 'Create new bingo',new_account_bingo_path(@account,bingo)%>
+
+
+
+
