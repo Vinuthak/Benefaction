@@ -2,7 +2,7 @@
 
 <%= form_for [@account,@user]  do |f| %>
 	<% if @user.errors.any? %>
-		<div id="Error-message">
+		<div id="Error_messages">
 			<ol>
 			<%= @user.errors.size %> <%= (@user.errors.size > 1) ? "Errors" : "Error"%> 
 				<% for error in @user.errors.full_messages %>

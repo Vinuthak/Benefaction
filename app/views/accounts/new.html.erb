@@ -17,7 +17,7 @@
 		<h2>Register the details</h2>
 		<%= form_for @account do |f|%>
 		    <% if @account.errors.any? %>
-				<div id= "error_explination">
+				<div id= "Error_messages">
 					<ol>
 						<%= pluralize(@account.errors.count,"error") %> prohibited this from being saved:
 						

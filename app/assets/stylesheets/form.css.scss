@@ -10,4 +10,28 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require_tree .
+ *= require_self
  */
+
+#Error_messages{
+	float: left;
+	ol{
+		color: red;
+	}
+	li{
+		color: red;
+		margin-left: 20px;
+	}
+}
+
+.input-box{
+	clear: both;
+	margin-bottom: 10px;
+	label{
+		width: 100px;
+		float: left;
+		color: blue;
+		
+	}
+}

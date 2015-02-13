@@ -8,7 +8,7 @@
 
 	<%= form_for [@account,@income] do |f|%>
 		<% if @income.errors.any? %>
-			<div id="Error_message"> 
+			<div id="Error_messages"> 
 				<ol>
 					<%= pluralize(@income.errors.count,"error") %> prohibited this income from being saved.
 

@@ -7,34 +7,47 @@
 				    width: 100%;
 			}
 	</style>
+
 	<%= form_for [@account,@bingo] do |f|%>
-		<div>
+		<% if @bingo.errors.any? %>
+			<div id="Error_messages">
+				<ol>
+					<%= pluralize(@bingo.errors.count,"error") %> prohibited bingo from being saved:
+					<% for error in @bingo.errors.full_messages %>
+					 <li><%= error %></li>
+				    <% end %>
+			    </ol>
+			</div>
+		<% end %>
+				
+
+		<div class="input-box">
 			<%= f.label :firstname %>
 			<%= f.text_field :firstname %>
 		</div>
 
-		<div>
+		<div class="input-box">
 			<%= f.label :lastname %>
 			<%= f.text_field :lastname%>
 		</div>
 
-		<div>
+		<div class="input-box">
 			<%= f.label :gender %>
 			<%= f.radio_button(:gender,"male") %> :Male
 			<%= f.radio_button(:gender,"female") %> :Female
 		</div>
 
-		<div>
+		<div class="input-box">
 			<%= f.label :amount%>
 			<%= f.text_field :amount%>
 		</div>
 
-		<div>
+		<div class="input-box">
 			<%= f.label :date %>
 			<%= f.date_field :date %>
 		</div>
 
-		<div>
+		<div class="input-box">
 			<%= f.submit %>
 		</div>
 	<% end %>

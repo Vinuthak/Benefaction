@@ -11,7 +11,7 @@
 		<%= form_for [@account,@expense] do |f| %>
 			<% if @expense.errors.any? %>
 				
-				<div id="Error_message">
+				<div id="Error_messages">
 					<ol><%= pluralize(@expense.errors.count,"Error") %> prohibited the following expense from saving
 						<% for error in @expense.errors.full_messages %>
 							<li><%= error %></li>
