@@ -5,8 +5,17 @@ class UsersController < ApplicationController
 	end
 
 	def index
+		# puts "****** "
+		# p params
+		# puts "****** "
+		# puts params[:firstname]
+		# puts "****** "
+		# puts params[:place]
+		# puts "****** "
+
 		@account = Account.find(params[:account_id])
-		@users = User.all
+		@users = User.search(params[:firstname],params[:place])# equal to select * from users where firstname = ""place = "",order by firstname as it is used in model
+		
 	end
 
 	def create

@@ -1,7 +1,7 @@
 class IncomesController < ApplicationController
 	def index
 		@account = Account.find(params[:account_id])
-		@incomes = Income.all
+		@incomes = Income.search(params[:name],params[:amount])
 		@total = Income.sum(:amount)
 	end
 

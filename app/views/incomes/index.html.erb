@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<h3>List Of Incomes</h3>
 	<style>
 	body {background-color: rgba(0,255,0,0.3);}
 	</style>
 </head>
-<body>
+<body>	
+		<div class="hidden">
+			<form>
+				<fieldset >
+						<legend><h4>Search Form</h4></legend>
+					
+							<%= form_tag account_incomes_path,:method => 'get' do %>
+								<div class="input-box">
+									<%= label_tag :name %>
+									<%= text_field_tag :name,params[:name] %>
+								</div>
+
+								<div class="input-box">
+									<%= label_tag :amount %>
+									<%= text_field_tag :amount,params[:amount] %>
+								</div>
+
+								<div class="input-box">
+									<%= submit_tag :Search %>
+									<%= link_to 'clear',params.clear %>
+								</div>
+							<% end %>
+				</fieldset>
+			</form>
+		</div>
+	<h3>List Of Incomes</h3>
+
 	<table bgcolor="white" border="2" cellspacing="0" cellpadding="3">
 		<thead>
 			<tr>

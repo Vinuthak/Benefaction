@@ -20,7 +20,12 @@ class AccountsController < ApplicationController
 	end
 
 	def index
-		@accounts = Account.all
+		if params[:search]
+			@accounts = Account.search(params[:search])
+		else
+			@accounts = Account.all
+		end
+
 	end
 
 	def details

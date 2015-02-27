@@ -3,6 +3,16 @@
 	body {font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 			    width: 100%;}
 	</style>
+	<%= form_tag account_users_path,:method => 'get' do %>
+		<p>
+			Name: <%= text_field_tag :firstname,params[:firstname] %><br>
+			Place: <%= text_field_tag :place,params[:place]  %><br>
+			<%= submit_tag :Search %>
+			<%= link_to 'clear',params.clear %>
+		</p>
+	<% end %>
+
+
 		<h2><strong>Users of <%= @account.name %></strong></h2>
 	<table border="2" cellspacing="0" cellpadding="2">
 		<thead>

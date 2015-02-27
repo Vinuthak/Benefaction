@@ -1,7 +1,7 @@
 class BingosController < ApplicationController
 	def index
 		@account = Account.find(params[:account_id])
-		@bingos = Bingo.all
+		@bingos = Bingo.search(params[:firstname])
 	end
 
 	def new
